@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class PaletteActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     RelativeLayout relativeLayout;
     String text;
+    String key, key2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +33,7 @@ public class PaletteActivity extends AppCompatActivity implements AdapterView.On
         text = parent.getItemAtPosition(position).toString();
         Intent intent = new Intent(getApplicationContext(),CanvasActivity.class);
         int color = Color.parseColor(text);
-        intent.putExtra("key",color);
+        intent.putExtra(key,color);
         intent.putExtra("key2",text);
         startActivity(intent);
 
