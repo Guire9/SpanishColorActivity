@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class PaletteActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     RelativeLayout relativeLayout;
     String text;
-    String key, key2;
+    String key;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

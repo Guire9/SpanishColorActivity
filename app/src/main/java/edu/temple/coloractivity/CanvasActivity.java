@@ -12,7 +12,7 @@ import android.widget.TextView;
 public class CanvasActivity extends AppCompatActivity {
     ConstraintLayout constraintLayout;
     TextView tv;
-    String key, key2;
+    String key;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
