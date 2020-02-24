@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ColorActivity</string>
+    <string-array name="colors">
+        <item>White</item>
+        <item>Red</item>
+        <item>Blue</item>
+        <item>Green</item>
+        <item>Yellow</item>
+        <item>Teal</item>
+        <item>Cyan</item>
+        <item>Lime</item>
+        <item>Navy</item>
+        <item>Purple</item>
+        <item>Silver</item>
+    </string-array>
+</resources>
