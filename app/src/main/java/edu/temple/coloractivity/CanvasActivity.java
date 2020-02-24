@@ -12,6 +12,7 @@ import android.widget.TextView;
 public class CanvasActivity extends AppCompatActivity {
     ConstraintLayout constraintLayout;
     TextView tv;
+    String key, key2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,10 +20,10 @@ public class CanvasActivity extends AppCompatActivity {
         constraintLayout = findViewById(R.id.activity2);
 
         Intent intent = getIntent();
-        int color = intent.getIntExtra("key",0);
+        int color = intent.getIntExtra(key,0);
         constraintLayout.setBackgroundColor(color);
 
-        String text = intent.getStringExtra("key2");
+        String text = intent.getStringExtra(key2);
         tv=findViewById(R.id.textView2);
         tv.setText(text);
 
