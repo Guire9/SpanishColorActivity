@@ -1,5 +1,6 @@
 package edu.temple.coloractivity;
 
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.widget.BaseAdapter;
 
@@ -16,14 +17,14 @@ import java.util.Locale;
 public class ColorAdapter extends BaseAdapter {
     private Context context;
     private String[] colors;
-  //  private int backColor;
     private LayoutInflater inflater;
 
-    public ColorAdapter(Context context,String[] colors){
-        this.context=context;
-        this.colors=colors;
-        inflater=(LayoutInflater.from(context));
+    public ColorAdapter(Context context, String[] colors) {
+        this.context = context;
+        this.colors = colors;
+        inflater = (LayoutInflater.from(context));
     }
+
     @Override
     public int getCount() {
         return colors.length;
@@ -31,7 +32,7 @@ public class ColorAdapter extends BaseAdapter {
 
     @Override
     public Object getItem(int position) {
-        return colors[position] ;
+        return colors[position];
     }
 
     @Override
@@ -41,28 +42,49 @@ public class ColorAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View view, ViewGroup parent) {
-        view =inflater.inflate(R.layout.support_simple_spinner_dropdown_item,null);
+
         TextView textView = new TextView(context);
         textView.setText(colors[position]);
 
-      /*  Resources res = context.getResources();
-        String[] hi = res.getStringArray(R.array.colors);
-        textView.setText(hi[position]);
-            //    res.getResources().getStringArray(R.array.colors); */
-
-      //  Resources res = context.getResources();
-      //  String CurrentLang = res.getConfiguration().locale.getLanguage();
         String CurrentLang = Locale.getDefault().getLanguage();
-
-        if(CurrentLang.equals(Locale.ENGLISH.toString())){
+        if (CurrentLang.equals(Locale.ENGLISH.toString())) {
             textView.setBackgroundColor(Color.parseColor(textView.getText().toString()));
-        }
+        } else {
+            if (textView.getText().toString().equals("Blanco")) {
+                textView.setBackgroundColor(Color.WHITE);
+            }
+            if (textView.getText().toString().equals("Rojo")) {
+                textView.setBackgroundColor(Color.RED);
+            }
+            if (textView.getText().toString().equals("Azul")) {
+                textView.setBackgroundColor(Color.BLUE);
+            }
+            if (textView.getText().toString().equals("Verde")) {
+                textView.setBackgroundColor(Color.GREEN);
+            }
+            if (textView.getText().toString().equals("Amarillo")) {
+                textView.setBackgroundColor(Color.YELLOW);
+            }
+            if (textView.getText().toString().equals("Verde azulado")) {
+                textView.setBackgroundColor(0x008080);
+            }
+            if (textView.getText().toString().equals("Cian")) {
+                textView.setBackgroundColor(Color.CYAN);
+            }
+            if (textView.getText().toString().equals("Lima")) {
+                textView.setBackgroundColor(0x00FF00);
+            }
+            if (textView.getText().toString().equals("Armada")) {
+                textView.setBackgroundColor(Color.RED);
+            }
 
-       else{
-           textView.setBackgroundColor(0xffffffff);
+            if (textView.getText().toString().equals("Púrpura")) {
+                textView.setBackgroundColor(0x800080);
+            }
+            if (textView.getText().toString().equals("Plata")) {
+                textView.setBackgroundColor(0xC0C0C0);
+            }
         }
-       return textView;
+        return textView;
     }
 }
-
-
