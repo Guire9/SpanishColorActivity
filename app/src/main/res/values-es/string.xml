@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">Actividad de color</string>
+    <string name="text">text</string>
     <string-array name="colors">
         <item>Blanco</item>
         <item>Rojo</item>

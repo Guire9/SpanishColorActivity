@@ -1,5 +1,6 @@
 package edu.temple.coloractivity;
 
+import android.content.res.Resources;
 import android.widget.BaseAdapter;
 
 import android.content.Context;
@@ -10,10 +11,13 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import java.util.Locale;
+
 public class ColorAdapter extends BaseAdapter {
     private Context context;
     private String[] colors;
-    LayoutInflater inflater;
+  //  private int backColor;
+    private LayoutInflater inflater;
 
     public ColorAdapter(Context context,String[] colors){
         this.context=context;
@@ -40,8 +44,24 @@ public class ColorAdapter extends BaseAdapter {
         view =inflater.inflate(R.layout.support_simple_spinner_dropdown_item,null);
         TextView textView = new TextView(context);
         textView.setText(colors[position]);
-        textView.setBackgroundColor(Color.parseColor(textView.getText().toString()));
-        return textView;
+
+      /*  Resources res = context.getResources();
+        String[] hi = res.getStringArray(R.array.colors);
+        textView.setText(hi[position]);
+            //    res.getResources().getStringArray(R.array.colors); */
+
+      //  Resources res = context.getResources();
+      //  String CurrentLang = res.getConfiguration().locale.getLanguage();
+        String CurrentLang = Locale.getDefault().getLanguage();
+
+        if(CurrentLang.equals(Locale.ENGLISH.toString())){
+            textView.setBackgroundColor(Color.parseColor(textView.getText().toString()));
+        }
+
+       else{
+           textView.setBackgroundColor(0xffffffff);
+        }
+       return textView;
     }
 }
 
