@@ -29,13 +29,13 @@ public class PaletteActivity extends AppCompatActivity implements AdapterView.On
     }
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-      //  view.setBackgroundColor(0xffffffff);
-      /*  text = parent.getItemAtPosition(position).toString();
+        view.setBackgroundColor(0xffffffff);
+        text = parent.getItemAtPosition(position).toString();
         Intent intent = new Intent(getApplicationContext(),CanvasActivity.class);
-        int color = Color.parseColor(text);
-        intent.putExtra(key,color);
+//        int color = Color.parseColor(text);
+ //       intent.putExtra(key,color);
         intent.putExtra("key2",text);
-        startActivity(intent); */
+        startActivity(intent);
 
     }
     @Override
