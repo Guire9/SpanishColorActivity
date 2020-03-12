@@ -66,23 +66,23 @@ public class ColorAdapter extends BaseAdapter {
                 textView.setBackgroundColor(Color.YELLOW);
             }
             if (textView.getText().toString().equals("Verde azulado")) {
-                textView.setBackgroundColor(0x008080);
+                textView.setBackgroundColor(Color.parseColor("Teal"));
             }
             if (textView.getText().toString().equals("Cian")) {
                 textView.setBackgroundColor(Color.CYAN);
             }
             if (textView.getText().toString().equals("Lima")) {
-                textView.setBackgroundColor(0x00FF00);
+                textView.setBackgroundColor(Color.parseColor("Lime"));
             }
             if (textView.getText().toString().equals("Armada")) {
-                textView.setBackgroundColor(Color.RED);
+                textView.setBackgroundColor(Color.parseColor("Navy"));
             }
 
             if (textView.getText().toString().equals("Púrpura")) {
-                textView.setBackgroundColor(0x800080);
+                textView.setBackgroundColor(Color.parseColor("Purple"));
             }
             if (textView.getText().toString().equals("Plata")) {
-                textView.setBackgroundColor(0xC0C0C0);
+                textView.setBackgroundColor(Color.parseColor("Silver"));
             }
         }
         return textView;
