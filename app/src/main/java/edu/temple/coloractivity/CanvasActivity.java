@@ -20,8 +20,8 @@ public class CanvasActivity extends AppCompatActivity {
         constraintLayout = findViewById(R.id.activity2);
 
         Intent intent = getIntent();
- //       int color = intent.getIntExtra(key,0);
-   //     constraintLayout.setBackgroundColor(color);
+        int color = intent.getIntExtra(key,0);
+        constraintLayout.setBackgroundColor(color);
 
         String text = intent.getStringExtra("key2");
         tv=findViewById(R.id.textView2);

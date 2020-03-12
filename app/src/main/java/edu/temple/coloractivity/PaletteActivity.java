@@ -11,6 +11,8 @@ import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Locale;
+
 public class PaletteActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     RelativeLayout relativeLayout;
     String text;
@@ -32,8 +34,11 @@ public class PaletteActivity extends AppCompatActivity implements AdapterView.On
         view.setBackgroundColor(0xffffffff);
         text = parent.getItemAtPosition(position).toString();
         Intent intent = new Intent(getApplicationContext(),CanvasActivity.class);
-//        int color = Color.parseColor(text);
- //       intent.putExtra(key,color);
+        String CurrentLang = Locale.getDefault().getLanguage();
+        if (CurrentLang.equals(Locale.ENGLISH.toString())) {
+            int color = Color.parseColor(text);
+            intent.putExtra(key, color);
+        }
         intent.putExtra("key2",text);
         startActivity(intent);
 
