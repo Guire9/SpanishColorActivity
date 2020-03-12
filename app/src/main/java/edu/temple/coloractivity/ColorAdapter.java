@@ -1,17 +1,12 @@
 package edu.temple.coloractivity;
 
-import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.widget.BaseAdapter;
-
 import android.content.Context;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.TextView;
-
 import java.util.Locale;
 
 public class ColorAdapter extends BaseAdapter {
@@ -24,7 +19,6 @@ public class ColorAdapter extends BaseAdapter {
         this.colors = colors;
         inflater = (LayoutInflater.from(context));
     }
-
     @Override
     public int getCount() {
         return colors.length;
