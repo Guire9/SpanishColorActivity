@@ -11,76 +11,73 @@ import android.widget.Spinner;
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.Locale;
 
-public class PaletteActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-    String text;
-    String key;
+public class PaletteActivity extends AppCompatActivity implements PaletteFragment.ColorSelectedInterface {
+    PaletteFragment f1;
+    CanvasFragment f2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Resources res = getResources();
-        String[] colors = res.getStringArray(R.array.colors);
-        Spinner spinner = findViewById(R.id.spinner);
-        ColorAdapter adapter1 = new ColorAdapter(this,colors);
-        spinner.setAdapter(adapter1);
-        spinner.setOnItemSelectedListener(this);
+        f1 = new PaletteFragment();
+        f2 = new CanvasFragment();
+
+
+        getSupportFragmentManager()
+                .beginTransaction()
+                .add(R.id.container1,f1)
+                .add(R.id.container2, f2)
+                .addToBackStack(null)
+                .commit();
+
     }
     @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        view.setBackgroundColor(0xffffffff);
-        text = parent.getItemAtPosition(position).toString();
-        Intent intent = new Intent(getApplicationContext(), CanvasActivity.class);
-        String CurrentLang = Locale.getDefault().getLanguage();
-            if (text.equals("Blanco")||text.equals("White") ) {
-                int color = Color.WHITE;
-                intent.putExtra(key, color);
-            }
-            if (text.equals("Rojo")||text.equals("Red")) {
-                int color = Color.RED;
-                intent.putExtra(key, color);
-            }
-            if (text.equals("Azul")||text.equals("Blue")) {
-                int color = Color.BLUE;
-                intent.putExtra(key, color);
-            }
-            if (text.equals("Verde")||text.equals("Green")) {
-                int color = Color.GREEN;
-                intent.putExtra(key, color);
-            }
-            if (text.equals("Amarillo")||text.equals("Yellow")) {
-                int color = Color.YELLOW;
-                intent.putExtra(key, color);
-            }
-            if (text.equals("Verde azulado")||text.equals("Teal")) {
-                int color = Color.parseColor("Teal");
-                intent.putExtra(key, color);
-            }
-            if (text.equals("Cian")||text.equals("Cyan")) {
-                int color = Color.CYAN;
-                intent.putExtra(key, color);
-            }
-            if (text.equals("Lima")||text.equals("Lime")) {
-                int color = Color.parseColor("Lime");
-                intent.putExtra(key, color);
-            }
-            if (text.equals("Armada")||text.equals("Navy")) {
-                int color = Color.parseColor("Navy");
-                intent.putExtra(key, color);
-            }
-            if (text.equals("Púrpura")||text.equals("Purple")) {
-                int color = Color.parseColor("Purple");
-                intent.putExtra(key, color);
-            }
-            if (text.equals("Plata")||text.equals("Silver")) {
-                int color = Color.parseColor("Silver");
-                intent.putExtra(key, color);
-            }
-            intent.putExtra("key2", text);
-            startActivity(intent);
+    public void ColorSelected(String c) {
+        int x= makeColor(c);
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container2, f2)
+                .addToBackStack(null)
+                .commit();
+        f2.changeColor2(x);
+    }
+    public int makeColor(String c){
+        if (c.equals("Blanco")) {
+            int x= Color.WHITE;
+            return x;
+        }else if (c.equals("Rojo")) {
+            int x= Color.RED;
+            return x;
+        } else if (c.equals("Azul")) {
+            int x= Color.BLUE;
+            return x;
+        }else if (c.equals("Verde")) {
+            int x= Color.GREEN;
+            return x;
+        } else if (c.equals("Amarillo")) {
+            int x= Color.YELLOW;
+            return x;
+        }else if (c.equals("Verde azulado")) {
+            int x= Color.parseColor("Teal");
+            return x;
+        }else if (c.equals("Cian")) {
+            int x= Color.CYAN;
+            return x;
+        }else if (c.equals("Lima")) {
+            int x= Color.parseColor("Lime");
+            return x;
+        }else if (c.equals("Armada")) {
+            int x= Color.parseColor("Navy");
+            return x;
+        }else if (c.equals("Púrpura")) {
+            int x= Color.parseColor("Purple");
+            return x;
+        }else if (c.equals("Plata")) {
+            int x= Color.parseColor("Silver");
+            return x;
+        }else{
+            int x=Color.parseColor(c);
+            return  x;
         }
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
 
     }
 }
-

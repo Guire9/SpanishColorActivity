@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Actividad de color</string>
-    <string name="text">text</string>
-    <string-array name="colors">
-        <item>Blanco</item>
-        <item>Rojo</item>
-        <item>Azul</item>
-        <item>Verde</item>
-        <item>Amarillo</item>
-        <item>Verde azulado</item>
-        <item>Cian</item>
-        <item>Lima</item>
-        <item>Armada</item>
-        <item>Púrpura</item>
-        <item>Plata</item>
-    </string-array>
+<string name="app_name">Actividad de color</string>
+<string name="text">text</string>
+<string-array name="colors">
+    <item>Blanco</item>
+    <item>Rojo</item>
+    <item>Azul</item>
+    <item>Verde</item>
+    <item>Amarillo</item>
+    <item>Verde azulado</item>
+    <item>Cian</item>
+    <item>Lima</item>
+    <item>Armada</item>
+    <item>Púrpura</item>
+    <item>Plata</item>
+</string-array>
 </resources>
